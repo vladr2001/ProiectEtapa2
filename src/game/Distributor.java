@@ -260,8 +260,10 @@ public class Distributor implements Player, Intermediate {
   @Override
   public void update(Gamestate gamestate) {
     for (Producer p : this.getProducers()) {
+      // scoate distributorul din listele producatorilor
       p.removeDistributor(this);
     }
+    // reseteaza lista de producatori a distributorilor
     this.setProducers(new ArrayList<>());
   }
 }

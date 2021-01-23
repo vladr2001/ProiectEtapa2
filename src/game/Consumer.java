@@ -168,17 +168,20 @@ public class Consumer implements Player {
       // Plateste daca isi permite
       this.budget = this.budget - (int) due;
       if (this.dues.size() == 1) {
+        // daca are doar o factura o plateste
         this.distributorsOwed.get(0).addBudget(due);
         this.distributorsOwed = new ArrayList<>();
         this.dues = new ArrayList<>();
       } else if (this.dues.size() == 2
               && this.distributorsOwed.get(0).equals(this.distributorsOwed.get(1))) {
+        // daca e acelasi distributor ca luna trecuta plateste si restanta
         this.distributorsOwed.get(0).addBudget(Math.round(Math.floor(
                 MAGICNUMBER * this.dues.get(0))));
         this.distributorsOwed.get(1).addBudget(this.dues.get(1));
         this.distributorsOwed = new ArrayList<>();
         this.dues = new ArrayList<>();
       } else if (this.dues.size() == 2) {
+        // daca nu e acelasi distributor plateste doar restanta
         this.distributorsOwed.get(0).addBudget(due);
         this.distributorsOwed.remove(0);
         this.dues.remove(0);

@@ -1,6 +1,7 @@
 package constants;
 
 public final class Constants {
+  // clasa de constante
   private Constants() {
   }
 

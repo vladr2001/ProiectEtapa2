@@ -7,7 +7,7 @@ import java.util.Collections;
 
 public class QuantityStrategy implements EnergyStrategy {
   /**
-   * ordoneaza lista dupa strateige QUANTITY
+   * ordoneaza lista dupa strategia QUANTITY
    * @param producers lista de porducatori
    * @return lista ordonata
    */

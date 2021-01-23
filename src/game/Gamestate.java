@@ -376,13 +376,16 @@ public final class Gamestate {
     }
 
     for (int i = 0; i < this.consumers.size(); i++) {
+      // scoate consumatorii bankrupt din jos
       if (this.consumers.get(i).isBankrupt()) {
         this.bankruptConsumers.add(this.consumers.get(i));
         this.consumers.remove(i);
         i--;
       }
     }
+
     if (round != 0) {
+      // face update la producatori
       this.updateProducer(round, input);
       for (Distributor d : this.distributors) {
         if (d.getProducers().size() == 0) {
@@ -390,6 +393,8 @@ public final class Gamestate {
           this.resetProducerList();
         }
       }
+
+      // face statusul lunar
       for (Producer p : this.producers) {
         p.addMonthlyStat(round);
       }
