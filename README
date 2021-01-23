@@ -1,0 +1,47 @@
+In aceasta tema am implementat etapa 2 a proiectului, care primeste in input
+date despre jucatori si ruleaza simularea pana la sfarsit, dupa care
+afiseaza output-ul(starea curenta a jocului). In acest proiect, am folosit
+5 package-uri(cu mai multe clase si interfete):
+I. input:
+    - ConsumerInput : clasa care se modeleaza dupa input-ul unui consumator
+    din json
+    - CostChange : clasa care se modeleaza dupa schimburile de costuri
+    de la distribuitori din update
+    - Data : o clasa cu o lista de consumatori si distribuitori
+    pentru a prelua datele din initialData
+    - DistribuitorInput : clasa care se modeleaza dupa input-ul unui distribuitor
+    din json
+    - Input : clasa de input
+    - MonthlyUpdate : clasa care se modeleaza dupa un update lunar
+    - ProducerChange : schimabarea lunara a unui producator
+    - ProducerInput : clasa care se modeleaza dupa input-ul unui producator
+II. game:
+    - Consumer : clasa care reprezinta un consumator
+    - ConsumerFactory : fabrica de consumatori
+    - Distributor : clasa care reprezinta un distribuitor
+    - Gamestate : un singleton in care se joaca fiecare runda
+    si reprezinta la fiecare pas starea curenta a jocului
+    - Player : interfata implementata de consumatori si distribuitori
+    (jucatorii)
+    - PlayerFactory : fabrica de jucatori
+    - Intermediate : interfata care are functia de update(pt observatori)
+    - Producer : clasa care reprezinta un producator
+
+III. output:
+    - ConsumerOutput : clasa care se modeleaza dupa output-ul unui consumator
+    din json
+    - Contract : clasa care se modeleaza dupa un contract din ref
+    - DistributorOutput : clasa care se modeleaza dupa output-ul unui
+    distribuitor din json
+    - Output : clasa de ouput care se modeleaza dupa ref-uri
+    - Month : clasa de output pentru o luna a unui producator
+    - ProducerOutput : clasa care se modeleaza dupa output-ul unui producator
+
+IV. constants:
+    - Constants : clasa de constante
+
+V. strategies:
+    - EnergyStrategy : interfata implementata de strategii
+    - GreenStrategy : strategia "green"
+    - PriceStrategy : strategia "price"
+    - QuantityStrategy : strategia "quantity"
